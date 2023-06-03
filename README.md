@@ -17,7 +17,7 @@ The project of Windows 10 Calculator is available on:
 
 ### Screenshot
 
-![Wide view] (/Screens/WideView.png)
+![Wide view] (/screens/WideView.png)
 
 ## Author
 
