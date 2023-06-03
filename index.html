@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fiszki</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="card">
+      <section id="counters">
+        <section class="container">
+          <p>Odgadnięte hasła</p>
+          <span id="counter-win">0</span>
+        </section>
+        <section class="container">
+          <p>Pominięte hasła</p>
+          <span id="counter-lose">0</span>
+        </section>
+      </section>
+      <span id="word-round"></span>
+      <p>Sprawdź czy umiesz...</p>
+      <input
+        type="text"
+        class="input-text"
+        id="word"
+        placeholder="Wpisz frazę"
+      />
+      <button id="skip-word">Skip word</button>
+      <section class="container">
+        <p>Dodaj słowo do słownika</p>
+        <input
+          type="text"
+          class="input-text"
+          id="word-handler-pl"
+          placeholder="Dodaj słowo po polsku"
+        />
+        <input
+          type="text"
+          class="input-text"
+          id="word-handler-eng"
+          placeholder="Enter word in english"
+        />
+      </section>
+      <button id="add-word">Add word</button>
+      <button id="change-language">Change language</button>
+    </section>
+    <script src="index.js"></script>
+  </body>
+</html>
