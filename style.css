@@ -60,7 +60,8 @@ p {
 
 #add-word,
 #skip-word,
-#change-language {
+#change-language,
+#show-word {
   background-color: #247ba0;
   border: solid 1px #247ba0;
   width: 100px;

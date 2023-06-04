@@ -10,8 +10,10 @@ const skipBtn = document.querySelector('#skip-word');
 const changeLanguage = document.querySelector('#change-language');
 const wordHandlerEng = document.querySelector('#word-handler-eng');
 const wordHandlerPl = document.querySelector('#word-handler-pl');
+const showWordBtn = document.querySelector('#show-word');
 
 let learn = true;
+let showWord = false;
 let dict = [];
 let actualWord = [];
 let dictionary = [
@@ -78,6 +80,7 @@ function skipWord() {
     counterLose.textContent = `${parseInt(counterLose.textContent) + 1}`;
     start();
     word.value = '';
+    showWord = false;
 }
 
 function changeLanguages() {
@@ -111,7 +114,7 @@ function start() {
 function checkingWord(e) {
     const target = e.target.value;
     // console.log(actuallyWord[0]);
-    if (actualWord[0] === target) {
+    if (actualWord[0] === target && showWord === false) {
         start();
         counterWinAddition();
         word.value = '';
@@ -123,8 +126,6 @@ function addToDict() {
         return alert('Nie wprowadzono poprawnie danych!');
     }
 
-    let eng = wordHandlerEng.value;
-    let pl = wordHandlerPl.value;
     dict.push([wordHandlerEng.value, wordHandlerPl.value]);
     saveToLocalStorage();
     wordHandlerEng.value = '';
@@ -132,8 +133,15 @@ function addToDict() {
     console.log(dict);
 }
 
+function showWords() {
+    if (learn) wordRound.textContent = actualWord[0];
+    if (!learn) wordRound.textContent = actualWord[1];
+    showWord = true;
+}
+
 addWord.addEventListener('click', () => addToDict());
 skipBtn.addEventListener('click', () => skipWord());
+showWordBtn.addEventListener('click', () => showWords());
 word.addEventListener('input', e => checkingWord(e));
 changeLanguage.addEventListener('click', () => changeLanguages());
 start();
